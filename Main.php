@@ -18,5 +18,5 @@ function is_leap_year($year) {
         return true;
     }
     
-    echo "test";
 }
+echo "test";
