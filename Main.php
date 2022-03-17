@@ -3,8 +3,7 @@
 include "input_array.php";
 
 function getPartsFromFullname($surname, $name, $patronymic) {
-    $fullname = $surname.' '.$name.' '.$patronymic;
-    return $fullname;
+    return $surname.' '.$name.' '.$patronymic;
 }
 
 function getFullnameFromParts($fullname) {
@@ -12,7 +11,7 @@ function getFullnameFromParts($fullname) {
     return $fullname;
 }
 
-function getShortName($surname, $name, $mic) {
+function getPartsShortName($surname, $name, $patronymic) {
     $fullname = 'test';
     return $fullname;}
 
