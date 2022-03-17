@@ -1,22 +1,19 @@
 <?php
 
-require "input_array.php";
+include "input_array.php";
 
-function is_leap_year($year) {
-    if ($year % 4 != 0) {
-        return false;
-    }
-    elseif ($year % 100 == 0) {
-        if ($year % 400 == 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    else {
-        return true;
-    }
-    
+function getPartsFromFullname($surname, $name, $patronymic) {
+    $fullname = $surname.' '.$name.' '.$patronymic;
+    return $fullname;
 }
-echo "test";
+
+function getFullnameFromParts($fullname) {
+    $fullname = 'test';
+    return $fullname;
+}
+
+function getShortName($surname, $name, $mic) {
+    $fullname = 'test';
+    return $fullname;}
+
+echo getPartsFromFullname('t', 'y', 'z');
