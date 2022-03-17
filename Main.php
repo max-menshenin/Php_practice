@@ -16,3 +16,5 @@ function getPartsShortName($surname, $name, $patronymic) {
     return $fullname;}
 
 echo getPartsFromFullname('t', 'y', 'z');
+$example_persons_array =;
+echo $example_persons_array[0][0];
