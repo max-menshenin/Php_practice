@@ -1,21 +1,13 @@
 <?php
-
-
 include 'input_array.php';
 
-function getPartsFromFullname($surname, $name, $patronymic) {
+function getFullnameFromParts($surname, $name, $patronymic) {
     return $surname.' '.$name.' '.$patronymic;
 }
 
-function getFullnameFromParts($fullname) {
-    $fullname = 'test';
-    return $fullname;
+function getPartsFromFullname($fullname) {
+
 }
-
-function getPartsShortName($surname, $name, $patronymic) {
-    $fullname = 'test';
-    return $fullname;}
-
-echo getPartsFromFullname('t', 'y', 'z');
-
 echo $example_persons_array[0]['fullname'];
+$str = 'surname name patronymic';
+print_r(explode(' ', $str));
