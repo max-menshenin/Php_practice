@@ -4,10 +4,12 @@ include 'input_array.php';
 function getFullnameFromParts($surname, $name, $patronymic) {
     return $surname.' '.$name.' '.$patronymic;
 }
-
-function getPartsFromFullname($fullname) {
-
+function getPartsFromFullname($fullname){
+$array = explode (' ', $fullname); // вытаскиваем ФИО как отдельный массив
+    $result['surname'] = $array[0];
+    $result['name'] = $array[1];
+    $result['$patronymic'] = $array[2];
+    return $result;
 }
-echo $example_persons_array[0]['fullname'];
-$str = 'surname name patronymic';
-print_r(explode(' ', $str));
+
+print_r(getPartsFromFullname('Иванов Иван Иванович'));
