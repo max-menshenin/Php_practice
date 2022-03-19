@@ -1,5 +1,5 @@
 <?php
-include 'input_array.php';
+require_once 'input_array.php';
 
 function getFullnameFromParts($surname, $name, $patronymic) {
     return $surname.' '.$name.' '.$patronymic;
