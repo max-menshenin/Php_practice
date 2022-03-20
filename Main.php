@@ -5,7 +5,7 @@ function getFullnameFromParts($surname, $name, $patronymic) {
     return $surname.' '.$name.' '.$patronymic;
 }
 function getPartsFromFullname($fullname){
-$array = explode (' ', $fullname); // вытаскиваем ФИО как отдельный массив
+    $array = explode (' ', $fullname); // вытаскиваем ФИО как отдельный массив
     $result['surname'] = $array[0];
     $result['name'] = $array[1];
     $result['$patronymic'] = $array[2];
