@@ -13,8 +13,8 @@ function getPartsFromFullname($fullname){
 }
 function getShortName($fullname) {
     $array = getPartsFromFullname($fullname);
-    $name =  mb_substr($array['name'], 0, 1).'.';
-    return $array['surname'].' '.$name;
+    $surname =  mb_substr($array['surname'], 0, 1).'.';
+    return $array['name'].' '.$surname.'.';
 }
 $fullname = 'Иванов Иван Иванович';
 echo getShortName($fullname);
