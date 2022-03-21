@@ -11,5 +11,9 @@ function getPartsFromFullname($fullname){
     $result['$patronymic'] = $array[2];
     return $result;
 }
-
-print_r(getPartsFromFullname('Иванов Иван Иванович'));
+function getShortName($fullname) {
+    $array = getPartsFromFullname($fullname);
+    return $array['surname'].' '.$array['name'].substr(0, 1).'.';
+}
+$fullname = 'Иванов Иван Иванович';
+echo getShortName($fullname);
