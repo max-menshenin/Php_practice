@@ -31,17 +31,15 @@ function getGenderFromName($fullname)
 
     elseif (str_ends_with($array['$patronymic'], 'вна')) {
         $gender -= 1;
-    }  elseif (str_ends_with($array['name'], 'а')) {
+    }  elseif (str_ends_with($array['name'], 'а') or (str_ends_with($array['name'], 'я')))  {
         $gender -= 1;
-    } elseif (str_ends_with($array['surnamename'], 'ва')) {
+    } elseif (str_ends_with($array['surname'], 'ва')) {
         $gender -= 1;
     }
 
-    return $gender? 'м': 'ж';
+    return $gender>0? 'м': 'ж';
 }
 
-
-
-$fullname = 'Пащенко Владимир Александрович';
+$fullname = 'Быстрая Юлия Сергеевна';
 echo getShortName($fullname);
 echo getGenderFromName($fullname);
