@@ -16,17 +16,29 @@ function getShortName($fullname) {
     $surname =  mb_substr($array['surname'], 0, 1);
     return $array['name'].' '.$surname.'.';
 }
-function getGenderFromName($fullname) {
+function getGenderFromName($fullname)
+{
     $gender = 0;
     $array = getPartsFromFullname($fullname);
 
     if (str_ends_with($array['$patronymic'], 'ич')) {
         $gender += 1;
+    } elseif (str_ends_with($array['name'], 'н') or str_ends_with($array['name'], 'й')) {
+        $gender += 1;
+    } elseif (str_ends_with($array['surname'],'в')) {
+        $gender += 1;
     }
 
+    elseif (str_ends_with($array['$patronymic'], 'вна')) {
+        $gender -= 1;
+    }  elseif (str_ends_with($array['name'], 'а')) {
+        $gender -= 1;
+    } elseif (str_ends_with($array['surnamename'], 'ва')) {
+        $gender -= 1;
+    }
 
+    return $gender? 'м': 'ж';
 }
-
 
 
 
