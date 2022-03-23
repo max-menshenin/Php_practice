@@ -19,31 +19,17 @@ function getShortName($fullname) {
 function getGenderFromName($fullname) {
     $gender = 0;
     $array = getPartsFromFullname($fullname);
-    if ($array['$patronymic'].str_ends_with('ов', '') or $array['$patronymic'].str_ends_with('ич', '')){
+
+    if (str_ends_with($array['$patronymic'], 'ич')) {
         $gender += 1;
-    }
-    elseif ($array['surname'].str_ends_with('в','')){
-        $gender += 1;
-    }
-    elseif ($array['name'].str_ends_with('н','')){
-        $gender += 1;
-    }
-    elseif ($array['$patronymic'].str_ends_with('вна','')){
-        $gender -= 1;
-    }
-    elseif ($array['name'].str_ends_with('а','')){
-        $gender -= 1;
-    }
-    elseif ($array['surname'].str_ends_with('ва','')){
-        $gender -= 1;
     }
 
-    return $gender;
+
 }
 
 
 
 
-$fullname = 'Быстрая Юлия Сергеевна';
+$fullname = 'Пащенко Владимир Александрович';
 echo getShortName($fullname);
 echo getGenderFromName($fullname);
